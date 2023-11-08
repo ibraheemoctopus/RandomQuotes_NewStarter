@@ -38,15 +38,14 @@ jobs:
     inputs:
       platform: '$(buildPlatform)'
       configuration: '$(buildConfiguration)'
-  - task: OctopusPackZip@6
+  - task: OctopusPack@4
     inputs:
-    PackageId: 'package'
-    PackageVersion: '1'
-
+     PackageId: 'package'
+     PackageFormat: 'Zip'
+     PackageVersion: '1'
   - task: OctopusPush@6
     inputs:
-    OctoConnectedServiceName: 'IbbyAzureConnection'
-    Space: 'Ibby Azure DevOps'
-    Packages: 'package'
-    PackageVersion: '1'
-    Replace: 'false'
+        OctoConnectedServiceName: 'IbbyAzureConnection'
+        Space: 'Ibby Azure DevOps'
+        Packages: 'package.1.zip'
+        Replace: 'false'
