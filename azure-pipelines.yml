@@ -1,4 +1,10 @@
 trigger:
+- task: OctopusPush@6
+  inputs:
+    OctoConnectedServiceName: 'IbbyAzureConnection'
+    Space: 'Ibby Azure DevOps'
+    Packages: 'compressedPackage'
+    Replace: 'false'
 - none
 
 pool:
