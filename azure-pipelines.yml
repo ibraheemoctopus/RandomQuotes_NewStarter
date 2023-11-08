@@ -38,12 +38,6 @@ jobs:
 
 - job: Deploy
   steps:
-  - task: OctopusPush@6
-    inputs:
-      OctoConnectedServiceName: 'UbuntuOctopusBox'
-      Space: 'Default'
-      Packages: 'Package1'
-      Replace: 'false'
   - task: OctopusPackZip@6
     inputs:
       PackageId: 'compressedpackage'
