@@ -44,6 +44,6 @@ jobs:
       Space: 'Default'
       Packages: 'Package1'
       Replace: 'false'
-- task: OctopusPackZip@6
-  inputs:
-    PackageId: 'compressedpackage'
+  - task: OctopusPackZip@6
+    inputs:
+      PackageId: 'compressedpackage'
