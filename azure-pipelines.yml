@@ -1,11 +1,8 @@
 trigger:
-- task: OctopusPush@6
-  inputs:
-    OctoConnectedServiceName: 'IbbyAzureConnection'
-    Space: 'Ibby Azure DevOps'
-    Packages: 'compressedPackage'
-    Replace: 'false'
 - none
+
+pr:
+- '*'
 
 pool:
   vmImage: 'windows-latest'
@@ -47,4 +44,11 @@ jobs:
   - task: OctopusPackZip@6
     inputs:
       PackageId: 'compressedpackage'
-      PackageVersion: '1.0.0' 
+      PackageVersion: '1.0.0'
+
+  - task: OctopusPush@6
+    inputs:
+      OctoConnectedServiceName: 'IbbyAzureConnection'
+      Space: 'Ibby Azure DevOps'
+      Packages: 'compressedPackage'
+      Replace: 'false'
