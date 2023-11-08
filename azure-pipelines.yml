@@ -1,7 +1,5 @@
-- task: OctopusPackZip@6
-  inputs:
-    PackageId: 'newpackage'
-- main
+trigger:
+- none
 
 pool:
   vmImage: 'windows-latest'
@@ -46,3 +44,6 @@ jobs:
       Space: 'Default'
       Packages: 'Package1'
       Replace: 'false'
+- task: OctopusPackZip@6
+  inputs:
+    PackageId: 'compressedpackage'
