@@ -41,3 +41,4 @@ jobs:
   - task: OctopusPackZip@6
     inputs:
       PackageId: 'compressedpackage'
+      PackageVersion: '1.0.0' 
