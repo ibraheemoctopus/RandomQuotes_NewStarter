@@ -1,4 +1,8 @@
 trigger:
+- task: OctopusPackZip@6
+  inputs:
+    PackageId: 'Testpackage'
+    PackageVersion: '1.1'
 - main
 
 pool:
